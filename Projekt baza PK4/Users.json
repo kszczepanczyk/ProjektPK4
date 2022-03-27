@@ -1,0 +1,37 @@
+[
+    {
+        "password": "regularpas",
+        "permissionLvl": 1,
+        "username": "regular"
+    },
+    {
+        "password": "adminpas",
+        "permissionLvl": 2,
+        "username": "admin"
+    },
+    {
+        "password": "",
+        "permissionLvl": 0,
+        "username": ""
+    },
+    {
+        "password": "qwerty",
+        "permissionLvl": 1,
+        "username": "newregular"
+    },
+    {
+        "password": "asd",
+        "permissionLvl": 2,
+        "username": "asd"
+    },
+    {
+        "password": "noo",
+        "permissionLvl": 1,
+        "username": "heeey"
+    },
+    {
+        "password": "uzyt",
+        "permissionLvl": 1,
+        "username": "uzyt"
+    }
+]

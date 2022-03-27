@@ -1,0 +1,107 @@
+[
+    {
+        "calories": 23,
+        "name": "red bell pepper",
+        "spiciness": 0
+    },
+    {
+        "calories": 40,
+        "name": "zucchini",
+        "spiciness": 0
+    },
+    {
+        "calories": 3,
+        "name": "cherry tomatoe",
+        "spiciness": 0
+    },
+    {
+        "calories": 16,
+        "name": "scallions",
+        "spiciness": 1
+    },
+    {
+        "calories": 8,
+        "name": "pepperoncini",
+        "spiciness": 2
+    },
+    {
+        "calories": 5,
+        "name": "olives",
+        "spiciness": 0
+    },
+    {
+        "calories": 1,
+        "name": "chicken breast",
+        "spiciness": 0
+    },
+    {
+        "calories": 10,
+        "name": "broccoli",
+        "spiciness": 0
+    },
+    {
+        "calories": 5,
+        "name": "mushroom",
+        "spiciness": 0
+    },
+    {
+        "calories": 120,
+        "name": "oil",
+        "spiciness": 0
+    },
+    {
+        "calories": 4,
+        "name": "garlic",
+        "spiciness": 3
+    },
+    {
+        "calories": 8,
+        "name": "soy sauce",
+        "spiciness": 0
+    },
+    {
+        "calories": 1,
+        "name": "eqqplant",
+        "spiciness": 0
+    },
+    {
+        "calories": 18,
+        "name": "tomatoe",
+        "spiciness": 0
+    },
+    {
+        "calories": 3,
+        "name": "fresh basil",
+        "spiciness": 0
+    },
+    {
+        "calories": 72,
+        "name": "egg",
+        "spiciness": 0
+    },
+    {
+        "calories": 2,
+        "name": "cheese",
+        "spiciness": 0
+    },
+    {
+        "calories": 1,
+        "name": "pasta",
+        "spiciness": 0
+    },
+    {
+        "calories": 1,
+        "name": "hummus",
+        "spiciness": 0
+    },
+    {
+        "calories": 1,
+        "name": "buffalo sauce",
+        "spiciness": 2
+    },
+    {
+        "calories": 112,
+        "name": "tortilla",
+        "spiciness": 0
+    }
+]

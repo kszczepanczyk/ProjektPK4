@@ -1,0 +1,286 @@
+[
+    {
+        "description": "Bring a large pot of salted water to a boil. Add pasta and cook until tender, 6 to 10 minutes (check the package for recommended cook time). Drain and rinse well under cold water. While the pasta cooks, in the bottom of a large bowl, make the dressing. Whisk the red wine vinegar, salt, pepper, oregano, pepperoncini juice (if using), and the olive oil until blended. Add the drained and rinsed pasta to the dressing and mix well. Stir in the bell pepper, zucchini, tomatoes, scallions, pepperoncini (if using), olives, parmesan, mozzarella, and the herbs (if using). Taste for seasoning and adjust with salt and pepper as needed. Serve or for the best results, cover and refrigerate at least 30 minutes and up to 5 days.",
+        "mealType": "Salad",
+        "name": "Pasta Salad",
+        "prepTime": 30,
+        "products": [
+            {
+                "name": "red bell pepper",
+                "number": 1
+            },
+            {
+                "name": "zucchini",
+                "number": 0
+            },
+            {
+                "name": "cherry tomatoe",
+                "number": 5
+            },
+            {
+                "name": "scallions",
+                "number": 5
+            },
+            {
+                "name": "pepperoncini",
+                "number": 20
+            },
+            {
+                "name": "olives",
+                "number": 1
+            }
+        ]
+    },
+    {
+        "description": "In a large pan on medium-high heat, add 1 tablespoon of oil. Once the oil is hot, add chicken, season with salt and pepper, and sauté until cooked through and browned. Remove cooked chicken from pan and set aside. Add 1 tablespoon of oil to the pan and sauté garlic and ginger until fragrant. Add the remaining sauce ingredients and stir until smooth.",
+        "mealType": "Main dish",
+        "name": "Chicken and veggie stir-fry",
+        "prepTime": 20,
+        "products": [
+            {
+                "name": "chicken breast",
+                "number": 450
+            },
+            {
+                "name": "broccoli",
+                "number": 250
+            },
+            {
+                "name": "mushroom",
+                "number": 225
+            },
+            {
+                "name": "oil",
+                "number": 3
+            },
+            {
+                "name": "garlic",
+                "number": 3
+            },
+            {
+                "name": "soy sauce",
+                "number": 2
+            }
+        ]
+    },
+    {
+        "description": "Preheat the oven to 375°F (190°C). Cut off the ends of the eggplant, then slice lengthwise about ⅛-inch (3-mm) thick. Sprinkle the eggplant slices with sea salt on both sides and let sit for 10 minutes to draw out moisture. Pat dry with paper towels to remove excess liquid.",
+        "mealType": "Main dish",
+        "name": "Low-Carb Eggplant Lasagna",
+        "prepTime": 20,
+        "products": [
+            {
+                "name": "eggplant",
+                "number": 500
+            },
+            {
+                "name": "garlic",
+                "number": 5
+            },
+            {
+                "name": "tomatoe",
+                "number": 4
+            },
+            {
+                "name": "fresh basil",
+                "number": 1
+            },
+            {
+                "name": "egg",
+                "number": 2
+            },
+            {
+                "name": "cheese",
+                "number": 400
+            }
+        ]
+    },
+    {
+        "description": "Bring a pot of water to a boil for the pasta. Once boiling, add the pasta and continue to boil until tender. Add the frozen broccoli florets to the pot of boiling water and pasta, and continue to cook for 2 minutes. Drain the pasta and broccoli together in a colander. While the pasta is cooking, prepare the chicken. Season both sides of the chicken breast with a pinch of salt and pepper. Add one tablespoon cooking oil to a large, deep skillet and heat over medium. Once hot, swirl the oil to coat the surface of the skillet, add the chicken breast, and cook on each side until golden brown and cooked through (about 5-7 minutes per side). Remove the cooked chicken to a clean cutting board and allow it to rest for five minutes, then chop it into small cubes.",
+        "mealType": "Main dish",
+        "name": "White cheddar mac and cheese",
+        "prepTime": 5,
+        "products": [
+            {
+                "name": "pasta",
+                "number": 300
+            },
+            {
+                "name": "broccoli",
+                "number": 250
+            },
+            {
+                "name": "chicken breast",
+                "number": 600
+            },
+            {
+                "name": "oil",
+                "number": 1
+            },
+            {
+                "name": "garlic",
+                "number": 3
+            }
+        ]
+    },
+    {
+        "description": "In a large saucepan, heat the olive oil over medium heat. Once the oil begins to shimmer, add the chickpeas and cook until lightly browned, 2-3 minutes. Add the garlic powder, salt, and buffalo sauce and cook for 2 more minutes, until the sauce thickens and the chickpeas have browned. Set aside.",
+        "mealType": "Snack",
+        "name": "Buffalo chickpea wrap",
+        "prepTime": 20,
+        "products": [
+            {
+                "name": "oil",
+                "number": 1
+            },
+            {
+                "name": "garlic",
+                "number": 2
+            },
+            {
+                "name": "buffalo sauce",
+                "number": 2
+            },
+            {
+                "name": "hummus",
+                "number": 1
+            },
+            {
+                "name": "tortilla",
+                "number": 2
+            }
+        ]
+    },
+    {
+        "description": "sdijaskld asdkljasdjk",
+        "mealType": "somemeal",
+        "name": "fajna nazwa",
+        "prepTime": 20,
+        "products": [
+            {
+                "name": "garlic",
+                "number": 2
+            },
+            {
+                "name": "eggplant",
+                "number": 100
+            }
+        ]
+    },
+    {
+        "description": "orem ipsum",
+        "mealType": "some meal",
+        "name": "wesola nazwa",
+        "prepTime": 40,
+        "products": [
+            {
+                "name": "egg",
+                "number": 2
+            }
+        ]
+    },
+    {
+        "description": "nowy",
+        "mealType": "yes",
+        "name": "well",
+        "prepTime": 20,
+        "products": [
+            {
+                "name": "garlic",
+                "number": 3
+            },
+            {
+                "name": "eggplant",
+                "number": 100
+            },
+            {
+                "name": "chicken breast",
+                "number": 1
+            }
+        ]
+    },
+    {
+        "description": "dfadf sdf",
+        "mealType": "ad",
+        "name": "ew name",
+        "prepTime": 60,
+        "products": [
+            {
+                "name": "olives",
+                "number": 4
+            },
+            {
+                "name": "oil",
+                "number": 2
+            }
+        ]
+    },
+    {
+        "description": "fadf wdef",
+        "mealType": "asdsdf",
+        "name": "recepturek",
+        "prepTime": 23,
+        "products": [
+            {
+                "name": "garlic",
+                "number": 2
+            }
+        ]
+    },
+    {
+        "description": "pis",
+        "mealType": "kolacja",
+        "name": "nazwa",
+        "prepTime": 20,
+        "products": [
+            {
+                "name": "garlic",
+                "number": 2
+            },
+            {
+                "name": "eggplant",
+                "number": 100
+            }
+        ]
+    },
+    {
+        "description": "sdkwr",
+        "mealType": "asdk",
+        "name": "jakas",
+        "prepTime": 12,
+        "products": [
+            {
+                "name": "garlic",
+                "number": 12
+            },
+            {
+                "name": "egg",
+                "number": 2
+            }
+        ]
+    },
+    {
+        "description": "sfsdfsd",
+        "mealType": "asf",
+        "name": "asd",
+        "prepTime": 2,
+        "products": [
+            {
+                "name": "garlic",
+                "number": 2
+            }
+        ]
+    },
+    {
+        "description": "fds",
+        "mealType": "pasd",
+        "name": "dsa",
+        "prepTime": 12,
+        "products": [
+            {
+                "name": "garlic",
+                "number": 2
+            }
+        ]
+    }
+]
