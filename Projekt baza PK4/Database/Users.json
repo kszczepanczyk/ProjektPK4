@@ -10,11 +10,6 @@
         "username": "admin"
     },
     {
-        "password": "",
-        "permissionLvl": 0,
-        "username": ""
-    },
-    {
         "password": "qwerty",
         "permissionLvl": 1,
         "username": "newregular"
@@ -33,5 +28,10 @@
         "password": "uzyt",
         "permissionLvl": 1,
         "username": "uzyt"
+    },
+    {
+        "password": "Adminowepa1",
+        "permissionLvl": 2,
+        "username": "logo"
     }
 ]

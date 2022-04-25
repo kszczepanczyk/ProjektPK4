@@ -5,6 +5,7 @@
 #include <iomanip>
 #include <memory>
 #include <algorithm>
+#include <filesystem>
 
 #include "Recepie.h"
 import Product;
@@ -15,13 +16,16 @@ import Product;
 
 
 using json = nlohmann::json;
+namespace fs = std::filesystem;
 
 class Database
 {
-
-	std::string fileRecepie = "Recepies.json";
-	std::string fileProducts = "Products.json";
-	std::string fileUsers = "Users.json";
+	fs::path fileRecepie = fs::current_path()/"Database"/"Recepies.json";
+	fs::path fileProducts = fs::current_path() / "Database" / "Products.json";
+	fs::path fileUsers = fs::current_path() / "Database" / "Users.json";
+	//std::string fileRecepie = "Recepies.json";
+	//std::string fileProducts = "Products.json";
+	//std::string fileUsers = "Users.json";
 public:
 	std::vector<std::unique_ptr<Recepie>> recepieVector;
 	std::vector<std::unique_ptr<Product>> productVector;

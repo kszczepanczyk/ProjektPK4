@@ -129,13 +129,12 @@ void Menu::menuDisplayAll() {
 	cout << "Lp.  Nazwa" << endl;
 	database->displayAllRecepies();
 	cout << "\n\nWybrany przepis: ";
-	cout << database->recepieVector.size();
 	while (true) {
-		option = _getch();
-		if (option - 49 >= database->recepieVector.size())
+		cin >> option;
+		if (option - 1 >= (int)database->recepieVector.size())
 			cout << "\nNiepoprawny przepis";
 		else
-			menuDisplayRecepie(option - 49);
+			menuDisplayRecepie(option - 1);
 	}
 }
 
@@ -173,8 +172,8 @@ void Menu::menuDisplayRecepie(int option) {
 	}
 	cout << "--------------\n";
 	cout << "[RETURN] Wroc\n";
-	option = _getch();
 	while (true) {
+		option = _getch();
 		switch (option) {
 		case 49:
 			menuGenerate(defaultOption);
@@ -189,7 +188,9 @@ void Menu::menuDisplayRecepie(int option) {
 			{
 			case 49:
 				cout << "Podaj nowa nazwe: ";
-				getline(cin, name);
+				//cin.ignore();
+				//getline(cin, name);
+				cin >> name;
 				database->modifyRecepie(name, prepTime, descript, mealType, defaultOption);
 				menuDisplayRecepie(defaultOption);
 				break;
@@ -201,7 +202,7 @@ void Menu::menuDisplayRecepie(int option) {
 				break;
 			case 51:
 				cout << "Podaj nowy opis: ";
-				cin >> descript;
+				getline(cin, descript);
 				database->modifyRecepie(name, prepTime, descript, mealType, defaultOption);
 				menuDisplayRecepie(defaultOption);
 				break;
@@ -248,7 +249,7 @@ void Menu::menuGenerate(int defaultOption) {
 	}
 	cout << "\nPodaj nazwe pliku do wygenerowania: ";
 	cin >> fileName;
-	fileName = "generates/" + fileName + ".txt";
+	//fileName = "generates/" + fileName + ".txt";
 	while (true) {
 		switch (option) {
 		case 49:
@@ -318,6 +319,7 @@ void Menu::menuManage() {
 	int prepTime = 0;
 	vector<pair<Product, int>> prodVec;
 	if (currentUser->getPermissionLvl() == 1) {
+		cout << "Dodaj przepis: \n";
 		currentUser->addRecepie(name, prepTime, mealType, description, prodVec);
 		database->addRecepie(name, prepTime, mealType, description, prodVec);
 		system("cls");
@@ -412,6 +414,7 @@ void Menu::menuRecepie() {
 	cout << "Wybierz opcje:";
 	while (true) {
 		option = _getch();
+		cout << endl;
 		switch (option) {
 		case 49:
 			currentUser->addRecepie(name, prepTime, mealType, description, prodVec);
@@ -423,10 +426,13 @@ void Menu::menuRecepie() {
 		case 50:
 			database->displayAllRecepies();
 			currentUser->deleteRecepie(option);
-			if (option == 0)
+			if (option == 0) {
+				system("cls");
 				menuRecepie();
+			}
 			else {
 				database->deleteRecepie(option - 1);
+				system("cls");
 				menuRecepie();
 			}
 			break;

@@ -1,5 +1,6 @@
 #pragma once
 #include "Regular.h"
+#include <regex>
 
 class Admin : public Regular {
 public:

@@ -10,7 +10,9 @@ void Database::readFromFile(std::string type) {
 	std::ifstream file;
 	json jsonFile;
 	if (type == "Recipies") {
+		//std::cout << fileRecepie;
 		file.open(fileRecepie);
+		
 		file >> jsonFile;
 		for (json& jsonRecepie : jsonFile) {
 			for (json& jsonProduct : jsonRecepie["products"]) {
@@ -38,6 +40,7 @@ void Database::readFromFile(std::string type) {
 		file.close();
 	}
 	else if (type == "Products") {
+		//std::cout << fileRecepie;
 		file.open(fileProducts);
 		file >> jsonFile;
 		for (json& jsonProduct : jsonFile) {
@@ -53,7 +56,8 @@ void Database::readFromFile(std::string type) {
 		file.close();
 	}
 	else if (type == "Users") {
-		file.open("Users.json");
+		//std::cout << fileRecepie;
+		file.open(fileUsers);
 		file >> jsonFile;
 		for (json& jsonUser : jsonFile) {
 			switch ((int)jsonUser["permissionLvl"]) {
@@ -179,8 +183,11 @@ void Database::displayAllRecepies() {
 }
 
 void Database::generateList(std::string fileName, int option) {
+	fs::path path = fs::current_path() / "Lists";
+	path.append(fileName);
+	//std::cout << fileName;
 	std::ofstream file;
-	file.open(fileName);
+	file.open(path);
 	for (auto& product : productsRecepie[option])
 		file << product.first.getName() << "\t" << product.second << "\n";
 	file.close();
@@ -188,8 +195,10 @@ void Database::generateList(std::string fileName, int option) {
 }
 
 void Database::generateRecepie(std::string fileName, int option) {
+	fs::path path = fs::current_path() / "Recipes";
+	path.append(fileName);
 	std::ofstream file;
-	file.open(fileName);
+	file.open(path);
 	file << recepieVector[option]->getName() << "\n";
 	file << recepieVector[option]->getPrepTime() << " | " << recepieVector[option]->getMealType() << "\n";
 	for (auto& tmpProduct : productsRecepie[option])

@@ -2,7 +2,7 @@
     {
         "description": "Bring a large pot of salted water to a boil. Add pasta and cook until tender, 6 to 10 minutes (check the package for recommended cook time). Drain and rinse well under cold water. While the pasta cooks, in the bottom of a large bowl, make the dressing. Whisk the red wine vinegar, salt, pepper, oregano, pepperoncini juice (if using), and the olive oil until blended. Add the drained and rinsed pasta to the dressing and mix well. Stir in the bell pepper, zucchini, tomatoes, scallions, pepperoncini (if using), olives, parmesan, mozzarella, and the herbs (if using). Taste for seasoning and adjust with salt and pepper as needed. Serve or for the best results, cover and refrigerate at least 30 minutes and up to 5 days.",
         "mealType": "Salad",
-        "name": "Pasta Salad",
+        "name": "potato",
         "prepTime": 30,
         "products": [
             {
@@ -151,22 +151,22 @@
             }
         ]
     },
-    {
-        "description": "sdijaskld asdkljasdjk",
-        "mealType": "somemeal",
-        "name": "fajna nazwa",
-        "prepTime": 20,
-        "products": [
-            {
-                "name": "garlic",
-                "number": 2
-            },
-            {
-                "name": "eggplant",
-                "number": 100
-            }
-        ]
-    },
+  {
+    "description": "Some description of a recipe",
+    "mealType": "Snack",
+    "name": "Garlic eggplant",
+    "prepTime": 20,
+    "products": [
+      {
+        "name": "garlic",
+        "number": 2
+      },
+      {
+        "name": "eggplant",
+        "number": 100
+      }
+    ]
+  },
     {
         "description": "orem ipsum",
         "mealType": "some meal",
@@ -280,6 +280,34 @@
             {
                 "name": "garlic",
                 "number": 2
+            }
+        ]
+    },
+    {
+        "description": "akis dlugi opis",
+        "mealType": "cos",
+        "name": "przep",
+        "prepTime": 12,
+        "products": [
+            {
+                "name": "garlic",
+                "number": 1
+            }
+        ]
+    },
+    {
+        "description": "dfgf",
+        "mealType": "ter",
+        "name": "tes",
+        "prepTime": 14,
+        "products": [
+            {
+                "name": "yes",
+                "number": 2
+            },
+            {
+                "name": "proo",
+                "number": 3
             }
         ]
     }

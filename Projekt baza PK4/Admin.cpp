@@ -28,10 +28,20 @@ void Admin::modifyRecepie(int& option)
 void Admin::addUser(std::string& _login, std::string& _password, int& _permissionLvl)
 {
 	system("cls");
+	std::regex reg("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$");
 	std::cout << "Podaj login: ";
 	std::cin >> _login;
-	std::cout << "Podaj haslo: ";
-	std::cin >> _password;
+	while (true) {
+		std::cout << "Podaj haslo: ";
+		std::cin >> _password;
+		if (std::regex_match(_password, reg)) {
+			break;
+		}
+		else {
+			std::cout << "\nHaslo powinno sie skladac z minimum 8 znakow, jedna duza i jedna mala litera oraz jedna cyfra\n";
+		}
+	}
+	
 	std::cout << "Podaj poziom uprawnien 0-2: ";
 	std::cin >> _permissionLvl;
 
