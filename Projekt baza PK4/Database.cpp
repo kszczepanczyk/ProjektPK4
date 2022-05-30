@@ -10,7 +10,6 @@ void Database::readFromFile(std::string type) {
 	std::ifstream file;
 	json jsonFile;
 	if (type == "Recipies") {
-		//std::cout << fileRecepie;
 		file.open(fileRecepie);
 		
 		file >> jsonFile;
@@ -36,11 +35,9 @@ void Database::readFromFile(std::string type) {
 			);
 			tmpProducts.clear();
 		}
-		//std::cout << "read recepie success";
 		file.close();
 	}
 	else if (type == "Products") {
-		//std::cout << fileRecepie;
 		file.open(fileProducts);
 		file >> jsonFile;
 		for (json& jsonProduct : jsonFile) {
@@ -52,11 +49,9 @@ void Database::readFromFile(std::string type) {
 					)
 			);
 		}
-		//std::cout << "read product success";
 		file.close();
 	}
 	else if (type == "Users") {
-		//std::cout << fileRecepie;
 		file.open(fileUsers);
 		file >> jsonFile;
 		for (json& jsonUser : jsonFile) {
@@ -91,7 +86,6 @@ void Database::readFromFile(std::string type) {
 			}
 
 		}
-		//std::cout << "read user success";
 		file.close();
 	}
 }
@@ -423,6 +417,7 @@ void Database::addRecepie(std::string name, int prepTime, std::string mealType, 
 					prodVec
 					)
 			);
+			productsRecepie.push_back(prodVec);
 			saveToFile("Recepies");
 		}
 		else
