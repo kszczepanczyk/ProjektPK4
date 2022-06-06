@@ -15,7 +15,6 @@ void Guest::search(int& _option) {
 	std::cout << "2.Po produktach\n";
 	std::cout << "--------------\n";
 	std::cout << "[RETURN] Wroc\n";
-	_option = _getch();
 }
 
 bool Guest::getLoggedIn() {

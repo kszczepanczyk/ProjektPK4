@@ -33,5 +33,15 @@
         "password": "Adminowepa1",
         "permissionLvl": 2,
         "username": "logo"
+    },
+    {
+        "password": "",
+        "permissionLvl": 0,
+        "username": ""
+    },
+    {
+        "password": "#Veeeee123",
+        "permissionLvl": 2,
+        "username": "logi"
     }
 ]

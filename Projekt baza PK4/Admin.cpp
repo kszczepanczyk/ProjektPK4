@@ -28,13 +28,13 @@ void Admin::modifyRecepie(int& option)
 void Admin::addUser(std::string& _login, std::string& _password, int& _permissionLvl)
 {
 	system("cls");
-	std::regex reg("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$");
+	std::regex regPass("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$");
 	std::cout << "Podaj login: ";
 	std::cin >> _login;
 	while (true) {
 		std::cout << "Podaj haslo: ";
 		std::cin >> _password;
-		if (std::regex_match(_password, reg)) {
+		if (std::regex_match(_password, regPass)) {
 			break;
 		}
 		else {
@@ -42,8 +42,14 @@ void Admin::addUser(std::string& _login, std::string& _password, int& _permissio
 		}
 	}
 	
-	std::cout << "Podaj poziom uprawnien 0-2: ";
-	std::cin >> _permissionLvl;
+	while (true) {
+		std::cout << "Podaj poziom uprawnien 0-2: ";
+		std::cin >> _permissionLvl;
+		if (_permissionLvl >= 0 && _permissionLvl <= 2)
+			break;
+		else
+			std::cout << "\nNiepoprawny poziom uprawnien\n";
+	}
 
 }
 

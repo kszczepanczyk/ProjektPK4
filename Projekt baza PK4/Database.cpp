@@ -1,9 +1,15 @@
 #include "Database.h"
 
 void Database::readFromFiles() {
-	Database::readFromFile("Users");
-	Database::readFromFile("Products");
-	Database::readFromFile("Recipies");
+	try {
+		std::jthread user(&Database::readFromFile,this, "Users");
+		std::jthread products(&Database::readFromFile,this, "Products");
+		std::jthread recipies(&Database::readFromFile,this, "Recipies");
+	}
+	catch (const std::exception& e) {
+		std::cerr << e.what();
+		exit(1);
+	}
 }
 
 void Database::readFromFile(std::string type) {
@@ -11,7 +17,8 @@ void Database::readFromFile(std::string type) {
 	json jsonFile;
 	if (type == "Recipies") {
 		file.open(fileRecepie);
-		
+		if (!file.good())
+			throw std::runtime_error("Brak bazy przepisow.");
 		file >> jsonFile;
 		for (json& jsonRecepie : jsonFile) {
 			for (json& jsonProduct : jsonRecepie["products"]) {
@@ -39,6 +46,8 @@ void Database::readFromFile(std::string type) {
 	}
 	else if (type == "Products") {
 		file.open(fileProducts);
+		if (!file.good())
+			throw std::runtime_error("Brak bazy produktow.");
 		file >> jsonFile;
 		for (json& jsonProduct : jsonFile) {
 			productVector.push_back(
@@ -53,6 +62,8 @@ void Database::readFromFile(std::string type) {
 	}
 	else if (type == "Users") {
 		file.open(fileUsers);
+		if (!file.good())
+			throw std::runtime_error("Brak bazy uzytkownikow.");
 		file >> jsonFile;
 		for (json& jsonUser : jsonFile) {
 			switch ((int)jsonUser["permissionLvl"]) {
@@ -361,7 +372,7 @@ void Database::addUser(std::string login, std::string password, int permissionLv
 }
 
 void Database::addProduct(std::string _name, int _calories, int _spiciness) {
-	if (!_name.empty() && _calories != 0 && _spiciness != 0) {
+	if (!_name.empty() && _calories != 0) {
 		if (getProductPointerByName(_name) == nullptr) {
 			productVector.push_back(
 				std::make_unique<Product>(
@@ -371,6 +382,7 @@ void Database::addProduct(std::string _name, int _calories, int _spiciness) {
 					)
 			);
 			saveToFile("Products");
+			std::cout << "idzie?";
 		}
 		else
 			std::cout << "Produkt juz istnieje\n";
@@ -419,6 +431,7 @@ void Database::addRecepie(std::string name, int prepTime, std::string mealType, 
 			);
 			productsRecepie.push_back(prodVec);
 			saveToFile("Recepies");
+			std::cout << "idzie?";
 		}
 		else
 			std::cout << "Receptura juz istnieje\n";
@@ -443,7 +456,7 @@ void Database::modifyRecepie(std::string name, int prepTime, std::string descrip
 
 void Database::deleteRecepie(int option) {
 	recepieVector.erase(recepieVector.begin() + option);
-	saveToFile("Recepie");
+	saveToFile("Recepies");
 }
 
 

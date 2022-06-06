@@ -156,68 +156,82 @@ void Menu::menuDisplayRecepie(int option) {
 		cout << "\t" << setw(10) << tmpProduct.first.getName() << "\t" << setw(5) << tmpProduct.second << endl;
 	cout << "\nDescription: \n";
 	cout << database->recepieVector[option]->getDescription();
-	//for (int chars = 0; chars < description.size();) {
-	//	for (int i = 0; i < 60; i++){
-	//			cout << description[chars];
-	//			chars++;
-	//			if (chars % 60 == 0)
-	//				cout << endl;
-	//	}
-	//}
 
-	cout << "\n\n1. Generuj\n";
 	if (currentUser->getPermissionLvl() == 2) {
-		cout << "2. Usun";
-		cout << "\n3. Modyfikuj\n";
+		cout << "\n\n1. Generuj\n";
+		cout << "2. Usun\n";
+		cout << "3. Modyfikuj\n";
+		cout << "--------------\n";
+		cout << "[RETURN] Wroc\n";
+		while (true) {
+			option = _getch();
+			switch (option) {
+			case 49:
+				menuGenerate(defaultOption);
+				break;
+			case 50:
+				database->deleteRecepie(defaultOption);
+				menuDisplayAll();
+				break;
+			case 51:
+				currentUser->modifyRecepie(option);
+				while (true) {
+					option = _getch();
+					switch (option)
+					{
+					case 49:
+						cout << "Podaj nowa nazwe: ";
+						cin >> name;
+						database->modifyRecepie(name, prepTime, descript, mealType, defaultOption);
+						menuDisplayRecepie(defaultOption);
+						break;
+					case 50:
+						cout << "Podaj nowy czas przygotowania: ";
+						cin >> prepTime;
+						database->modifyRecepie(name, prepTime, descript, mealType, defaultOption);
+						menuDisplayRecepie(defaultOption);
+						break;
+					case 51:
+						cout << "Podaj nowy opis: ";
+						getline(cin, descript);
+						database->modifyRecepie(name, prepTime, descript, mealType, defaultOption);
+						menuDisplayRecepie(defaultOption);
+						break;
+					case 52:
+						cout << "Podaj nowy typ: ";
+						cin >> mealType;
+						database->modifyRecepie(name, prepTime, descript, mealType, defaultOption);
+						menuDisplayRecepie(defaultOption);
+						break;
+					case 8:
+						menuDisplayRecepie(defaultOption);
+						break;
+					default:
+						cout << "Niepoprawna opcja\n";
+						break;
+					}
+				}
+				break;
+			case 8:
+				system("cls");
+				menuMain();
+				break;
+			default:
+				cout << "Zla opcja\n";
+				break;
+			}
+		}
 	}
-	cout << "--------------\n";
-	cout << "[RETURN] Wroc\n";
+	else {
+		cout << "\n\n1. Generuj\n";
+		cout << "--------------\n";
+		cout << "[RETURN] Wroc\n";
+	}
 	while (true) {
 		option = _getch();
 		switch (option) {
 		case 49:
 			menuGenerate(defaultOption);
-			break;
-		case 50:
-			database->deleteRecepie(defaultOption);
-			cout << option;
-			break;
-		case 51:
-			currentUser->modifyRecepie(option);
-			switch (option)
-			{
-			case 49:
-				cout << "Podaj nowa nazwe: ";
-				//cin.ignore();
-				//getline(cin, name);
-				cin >> name;
-				database->modifyRecepie(name, prepTime, descript, mealType, defaultOption);
-				menuDisplayRecepie(defaultOption);
-				break;
-			case 50:
-				cout << "Podaj nowy czas przygotowania: ";
-				cin >> prepTime;
-				database->modifyRecepie(name, prepTime, descript, mealType, defaultOption);
-				menuDisplayRecepie(defaultOption);
-				break;
-			case 51:
-				cout << "Podaj nowy opis: ";
-				getline(cin, descript);
-				database->modifyRecepie(name, prepTime, descript, mealType, defaultOption);
-				menuDisplayRecepie(defaultOption);
-				break;
-			case 52:
-				cout << "Podaj nowy typ: ";
-				cin >> mealType;
-				database->modifyRecepie(name, prepTime, descript, mealType, defaultOption);
-				menuDisplayRecepie(defaultOption);
-				break;
-			case 8:
-				menuDisplayRecepie(defaultOption);
-				break;
-			default:
-				break;
-			}
 			break;
 		case 8:
 			system("cls");
@@ -242,29 +256,31 @@ void Menu::menuGenerate(int defaultOption) {
 	cout << "2.Liste zakupow\n";
 	cout << "--------------\n";
 	cout << "[RETURN] Wroc\n";
-	option = _getch();
-	if (option == 8) {
-		system("cls");
-		menuDisplayRecepie(defaultOption);
-	}
-	cout << "\nPodaj nazwe pliku do wygenerowania: ";
-	cin >> fileName;
-	//fileName = "generates/" + fileName + ".txt";
 	while (true) {
+		option = _getch();
 		switch (option) {
 		case 49:
+			cout << "\nPodaj nazwe pliku do wygenerowania: ";
+			cin >> fileName;
 			database->generateRecepie(fileName, defaultOption);
 			menuDisplayRecepie(defaultOption);
 			break;
 		case 50:
+			cout << "\nPodaj nazwe pliku do wygenerowania: ";
+			cin >> fileName;
 			database->generateList(fileName, defaultOption);
+			menuDisplayRecepie(defaultOption);
+			break;
+		case 8:
+			system("cls");
 			menuDisplayRecepie(defaultOption);
 			break;
 		default:
 			cout << "Zla opcja";
-			break;
-		}
+		break;
 	}
+}
+
 
 }
 
@@ -273,6 +289,7 @@ void Menu::menuSearch() {
 	string name;
 	currentUser->search(option);
 	while (true) {
+		option = _getch();
 		switch (option)
 		{
 		case 49:
@@ -307,6 +324,7 @@ void Menu::menuSearch() {
 			menuMain();
 			break;
 		default:
+			cout << "Niepoprawna opcja\n";
 			break;
 		}
 	}
@@ -354,7 +372,7 @@ void Menu::menuManage() {
 			system("cls");
 			menuMain();
 		default:
-			cout << "zla opcja";
+			cout << "\nNiepoprawna opcja\n";
 			break;
 		}
 	}
@@ -395,6 +413,7 @@ void Menu::menuUsers() {
 			menuManage();
 			break;
 		default:
+			cout << "\nNiepoprawna opcja\n";
 			break;
 		}
 	}
@@ -440,6 +459,7 @@ void Menu::menuRecepie() {
 			menuManage();
 			break;
 		default:
+			cout << "\nNiepoprawna opcja\n";
 			break;
 		}
 	}
@@ -480,6 +500,7 @@ void Menu::menuProducts() {
 			menuManage();
 			break;
 		default:
+			cout << "\nNiepoprawna opcja\n";
 			break;
 		}
 	}

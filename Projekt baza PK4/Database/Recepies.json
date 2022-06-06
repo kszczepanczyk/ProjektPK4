@@ -321,8 +321,8 @@
     },
     {
         "description": "gj",
-        "mealType": "gk",
-        "name": "prtoe",
+        "mealType": "typ",
+        "name": "potat",
         "prepTime": 12,
         "products": [
             {
@@ -332,26 +332,14 @@
         ]
     },
     {
-        "description": "dp",
-        "mealType": "spf",
-        "name": "safdp",
-        "prepTime": 12,
+        "description": "o",
+        "mealType": "po",
+        "name": "ppppppp",
+        "prepTime": 21,
         "products": [
             {
                 "name": "garlic",
                 "number": 1
-            }
-        ]
-    },
-    {
-        "description": "fdsgjkn",
-        "mealType": "dfs",
-        "name": "dziala",
-        "prepTime": 13,
-        "products": [
-            {
-                "name": "garlic",
-                "number": 2
             }
         ]
     }
